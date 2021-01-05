@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateAcSettingsTable extends Migration {
+class CreateAcContactsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAcSettingsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('ac_settings', function(Blueprint $table)
+		Schema::create('ac_contacts', function(Blueprint $table)
 		{
-			$table->integer('id', true);
-			$table->string('s_name', 512)->nullable();
-			$table->text('s_value', 65535)->nullable();
-			$table->dateTime('dt_updated')->nullable();
+			$table->integer('users_id');
+			$table->integer('contacts_id');
+			$table->dateTime('dt_updated');
+			$table->unique(['users_id','contacts_id'], 'users_id_2');
 		});
 	}
 
@@ -30,7 +30,7 @@ class CreateAcSettingsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('ac_settings');
+		Schema::drop('ac_contacts');
 	}
 
 }

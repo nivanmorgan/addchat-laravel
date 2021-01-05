@@ -7,15 +7,10 @@ use Illuminate\Filesystem\Filesystem;
 use Intervention\Image\ImageServiceProviderLaravel5;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Process\Process;
-use Classiebit\Addchat\Traits\Seedable;
 use Classiebit\Addchat\AddchatServiceProvider;
 
 class InstallCommand extends Command
 {
-    use Seedable;
-
-    protected $seedersPath = __DIR__.'/../../publishable/database/seeds/';
-
     /**
      * The console command name.
      *
@@ -28,7 +23,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the Addchat package';
+    protected $description = 'Install the Addchat Pro package';
 
     protected function getOptions()
     {
@@ -67,6 +62,51 @@ class InstallCommand extends Command
     {
         $this->info('Initiate the installation process...');
 
+        // verify installation
+        // get domain name
+        $domain      = parse_url(request()->root())['host']; 
+        $s_host      = \Request::ip(); 
+        $license_key = $this->ask('Enter Your license_key');
+        if($this->confirm('Do you wish to continue?'))
+        {
+            $client = new \GuzzleHttp\Client(['verify' => false]);
+            $response = $client->request('POST', 'https://cblicense.classiebit.com/verifyl', [
+                'form_params' => [
+                    'domain'        => $domain,
+                    's_host'        => $s_host,
+                    'code'          => "CBADLPRO01",
+                    'license_key'   => $license_key
+                ]
+            ]);
+            $response = json_decode($response->getBody()->getContents());
+            if(!empty($response))
+            {   
+                if($response->status)
+                {
+                    $this->info('License verified, installing...');
+                    $this->install($filesystem);
+                }
+                else
+                {
+                    $this->info('License verification failed.');
+                }    
+            }
+            else
+            {
+                $this->info('License verification failed.');
+            }    
+        }
+        else
+        {
+            $this->info('Installation abort.');
+        }
+    }
+
+    
+    private function install(Filesystem $filesystem)
+    {
+        $this->info('Initiate the installation process...');
+
         // 1. Publish the core assets defined in the AddchatServiceProvider
         $this->info('1. Publishing Addchat core assets: config & languages');
         $this->call('vendor:publish', ['--provider' => AddchatServiceProvider::class]);
@@ -78,13 +118,13 @@ class InstallCommand extends Command
         // ---- Check if everything good so far ----
         $this->info('---- Dumping the autoloaded files and reloading all new files ----');
         $composer = $this->findComposer();
-        $process = new Process($composer.' dump-autoload');
+        $process = new Process([$composer.' dump-autoload']);
         // Setting timeout to null to prevent installation from stopping at a certain point in time
         $process->setTimeout(null); 
         $process->setWorkingDirectory(base_path())->run();
 
         // 3. Add Addchat Route
-        $this->info('4. Adding Addchat routes to your application routes/web.php');
+        $this->info('3. Adding Addchat routes to your application routes/web.php');
         $routes_contents = $filesystem->get(base_path('routes/web.php'));
         if (false === strpos($routes_contents, 'Addchat::routes()')) {
             $filesystem->append(
@@ -93,15 +133,11 @@ class InstallCommand extends Command
             );
         }
 
-        // 4. Run database seeder
-        $this->info('5. Running Addchat database seeders');
-        $this->seed('AddchatDatabaseSeeder');
-
-        // 5. Add storage symlink
-        $this->info('6. Adding the storage symlink to your public folder');
+        // 4. Add storage symlink
+        $this->info('4. Adding the storage symlink to your public folder');
         $this->call('storage:link');
         
         // Finish
-        $this->info('Congrats!!! Addchat installed successfully! Wish you all the best :)');
-    }
+        $this->info('Congrats! Addchat Laravel Pro installed successfully. Good Luck :)');
+    }    
 }

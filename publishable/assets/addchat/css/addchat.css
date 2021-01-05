@@ -7935,7 +7935,7 @@ readers do not read off random characters that represent icons */
 {
     display: block;
 
-    padding: 0rem 0rem 1.3rem 0rem; 
+    padding: 0rem 0rem 2.5rem 0rem; 
 
     transition: all .3s ease-in;
     transform: scale(1);
@@ -7970,6 +7970,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin .c-buddy.c-expand .c-buddy-image .c-image
 {
     width: 6rem;
+    height: 6rem;
 
     border: 3px solid #fff; 
     box-shadow: 0 0 8px -2px rgba(58, 58, 69, .4);
@@ -8006,6 +8007,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin.c-resize-s .c-buddy-image .c-image
 {
     width: 2.2rem;
+    height: 2.2rem;
 }
 #addchat-bot.c-resize-s .c-buddy-image .c-close,
 #addchat-bot-admin.c-resize-s .c-buddy-image .c-close
@@ -8022,6 +8024,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin.c-resize-s .c-buddy.c-expand .c-buddy-image .c-image
 {
     width: 4.3rem;
+    height: 4.3rem;
 }
 
 #addchat-bot.c-mode-dark .c-buddy,
@@ -8109,7 +8112,8 @@ readers do not read off random characters that represent icons */
 #addchat-bot .c-profile .c-image-big,
 #addchat-bot-admin .c-profile .c-image-big
 {
-    width: 10rem; 
+    width: 10rem;
+    height: 10rem; 
     margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -8166,7 +8170,8 @@ readers do not read off random characters that represent icons */
 #addchat-bot.c-resize-s .c-profile .c-image-big,
 #addchat-bot-admin.c-resize-s .c-profile .c-image-big
 {
-    width: 6rem; 
+    width: 6rem;
+    height: 6rem; 
     margin-top: 18px;
     margin-bottom: .7rem;
 }
@@ -8298,6 +8303,19 @@ readers do not read off random characters that represent icons */
     width: 85%;
     margin-bottom: .4rem; 
     padding: .8rem 1rem .1rem 1rem;
+}
+#addchat-bot .c-contacts .c-contact .c-title.c-nosubtitle,
+#addchat-bot .c-contacts .c-group .c-title.c-nosubtitle,
+#addchat-bot .c-groups .c-contact .c-title.c-nosubtitle,
+#addchat-bot .c-groups .c-group .c-title.c-nosubtitle,
+#addchat-bot-admin .c-contacts .c-contact .c-title.c-nosubtitle,
+#addchat-bot-admin .c-contacts .c-group .c-title.c-nosubtitle,
+#addchat-bot-admin .c-groups .c-contact .c-title.c-nosubtitle,
+#addchat-bot-admin .c-groups .c-group .c-title.c-nosubtitle
+{
+    font-size: .8rem; 
+
+    padding-top: 1.2rem;
 }
 #addchat-bot .c-contacts .c-contact .c-status,
 #addchat-bot .c-contacts .c-group .c-status,
@@ -8975,6 +8993,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin .c-image
 {
     width: 2.5rem;
+    height: 2.5rem;
 
     border-radius: 50%;
 }
@@ -8983,6 +9002,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin .c-image-big
 {
     width: 4.5rem;
+    height: 4.5rem;
 
     border-radius: 50%;
 }
@@ -9002,7 +9022,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin .c-messages
 {
     width: 100%; 
-    height: 83%;
+    height: 80%;
 }
 #addchat-bot .c-messages .c-daystamp,
 #addchat-bot-admin .c-messages .c-daystamp
@@ -9096,8 +9116,8 @@ readers do not read off random characters that represent icons */
     font-size: .5rem;
 
     position: absolute;
-    right: 2rem;
-    bottom: -.8rem;
+    right: .2rem;
+    bottom: .2rem;
 
     opacity: 0;
 }
@@ -9307,6 +9327,8 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin .c-button:not(:disabled):not(.disabled):active,
 #addchat-bot-admin .c-button:not(:disabled):not(.disabled).active
 {
+    border-color: #0073e6; 
+    background-color: #0073e6;
     box-shadow: none;
 }
 #addchat-bot .c-button:not(:disabled):not(.disabled):active:focus,
@@ -9797,14 +9819,16 @@ readers do not read off random characters that represent icons */
     font-size: 1rem;
 
     position: absolute;
-    top: 0;
-    right: .5%;
+    top: .7rem;
+    right: .6rem;
 
-    height: 100%;
+    padding: 0; 
 
+    color: #fff;
     border: none;
     outline: 0;
-    background: transparent;
+    background: #0080ff;
+    box-shadow: 0 5px 7px rgba(51, 49, 92, .11), 0 2px 4px rgba(0, 0, 0, .09);
 }
 #addchat-bot .c-send .c-send-textarea,
 #addchat-bot-admin .c-send .c-send-textarea
@@ -9815,11 +9839,10 @@ readers do not read off random characters that represent icons */
 
     position: absolute;
     z-index: 99999999 !important; 
-    left: 7%;
 
     overflow: hidden;
 
-    width: 82%;
+    width: 85%;
     height: 100%;
     padding: .5rem 0rem .5rem .5rem;
 
@@ -9849,24 +9872,27 @@ readers do not read off random characters that represent icons */
 {
     left: 0;
 
-    width: 88%; 
+    width: 85%; 
     padding-left: .5rem;
 }
 #addchat-bot .c-send .c-message-options,
 #addchat-bot-admin .c-send .c-message-options
 {
     position: absolute;
-    top: 12%;
-    left: 2.5%;
+    z-index: 9;
+    top: -24px;
+    right: 10px;
 
-    cursor: pointer;
+    cursor: pointer; 
+
+    color: #0080ff;
 }
 #addchat-bot .c-send .c-message-options .c-attach,
 #addchat-bot-admin .c-send .c-message-options .c-attach
 {
-    cursor: pointer; 
+    cursor: pointer;
 
-    opacity: .4;
+    opacity: .6;
 }
 #addchat-bot .c-send .c-message-options .c-attach input,
 #addchat-bot-admin .c-send .c-message-options .c-attach input
@@ -9891,19 +9917,21 @@ readers do not read off random characters that represent icons */
 #addchat-bot .c-send .c-message-options .c-attach:hover,
 #addchat-bot-admin .c-send .c-message-options .c-attach:hover
 {
-    opacity: .8;
+    opacity: 1;
 }
 
 #addchat-bot .c-send .c-emoji-button,
 #addchat-bot-admin .c-send .c-emoji-button
 {
     position: absolute;
-    bottom: 15%;
-    left: 2.5%;
+    z-index: 9;
+    top: -24px;
+    right: 40px;
 
-    cursor: pointer; 
+    cursor: pointer;
 
-    opacity: .4;
+    opacity: .6; 
+    color: #0080ff;
 }
 #addchat-bot .c-send .c-emoji-button:before,
 #addchat-bot-admin .c-send .c-emoji-button:before
@@ -9915,14 +9943,14 @@ readers do not read off random characters that represent icons */
 #addchat-bot .c-send .c-emoji-button:hover,
 #addchat-bot-admin .c-send .c-emoji-button:hover
 {
-    opacity: .8;
+    opacity: 1;
 }
 
 #addchat-bot .c-send .c-emoji-popup,
 #addchat-bot-admin .c-send .c-emoji-popup
 {
     position: absolute;
-    bottom: 4rem;
+    bottom: 3.8rem;
     left: 0;
 
     width: 100% !important;
@@ -9973,16 +10001,39 @@ readers do not read off random characters that represent icons */
     padding-top: .6rem;
 }
 
-#addchat-bot.c-resize-s .c-message-options .c-attach:before,
-#addchat-bot-admin.c-resize-s .c-message-options .c-attach:before
+#addchat-bot.c-resize-s .c-send .c-button-round,
+#addchat-bot-admin.c-resize-s .c-send .c-button-round
+{
+    font-size: .8rem;
+
+    top: .45rem;
+    right: .5rem;
+
+    width: 2rem;
+    height: 2rem;
+}
+#addchat-bot.c-resize-s .c-send .c-button-round i,
+#addchat-bot-admin.c-resize-s .c-send .c-button-round i
+{
+    line-height: 2.1rem;
+}
+
+#addchat-bot.c-resize-s .c-send .c-message-options .c-attach:before,
+#addchat-bot-admin.c-resize-s .c-send .c-message-options .c-attach:before
 {
     font-size: .9rem;
 }
 
-#addchat-bot.c-resize-s .c-emoji-button:before,
-#addchat-bot-admin.c-resize-s .c-emoji-button:before
+#addchat-bot.c-resize-s .c-send .c-emoji-button:before,
+#addchat-bot-admin.c-resize-s .c-send .c-emoji-button:before
 {
     font-size: .9rem;
+}
+
+#addchat-bot.c-resize-s .c-send .c-emoji-popup,
+#addchat-bot-admin.c-resize-s .c-send .c-emoji-popup
+{
+    bottom: 3.1rem;
 }
 
 #addchat-bot.c-mode-dark .c-send,
@@ -9996,13 +10047,6 @@ readers do not read off random characters that represent icons */
 {
     color: #c9d6de; 
     background: #1c1c1c;
-}
-#addchat-bot.c-mode-dark .c-send .c-message-options,
-#addchat-bot.c-mode-dark .c-send .c-emoji-button,
-#addchat-bot-admin.c-mode-dark .c-send .c-message-options,
-#addchat-bot-admin.c-mode-dark .c-send .c-emoji-button
-{
-    color: #c9d6de;
 }
 #addchat-bot.c-mode-dark .c-send .c-emoji-popup #EmojiPicker,
 #addchat-bot-admin.c-mode-dark .c-send .c-emoji-popup #EmojiPicker
@@ -10412,6 +10456,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin.c-resize-s .c-buddy-image .c-image
 {
     width: 2.2rem;
+    height: 2.2rem;
 }
 #addchat-bot.c-resize-s .c-buddy-image .c-close,
 #addchat-bot-admin.c-resize-s .c-buddy-image .c-close
@@ -10428,6 +10473,7 @@ readers do not read off random characters that represent icons */
 #addchat-bot-admin.c-resize-s .c-buddy.c-expand .c-buddy-image .c-image
 {
     width: 4.3rem;
+    height: 4.3rem;
 }
 
 #addchat-bot.c-mode-dark .c-buddy,
@@ -10625,31 +10671,38 @@ readers do not read off random characters that represent icons */
     }
 }
 
-#addchat-bot .c-footer
+#addchat-footer
 {
-    position: absolute;
-    z-index: 999999999;
-    bottom: 0;
+    position: fixed;
+    z-index: 9999999;
+    right: 26px;
+    bottom: 2px;
 
-    width: 100%;
+    margin: 0;
+    padding: 0;
 
-    text-align: right;
+    cursor: pointer;
 }
-#addchat-bot .c-footer-text
+#addchat-footer .addchat-footer-text,
+#addchat-footer .addchat-footer-text a
 {
-    font-size: .55rem;
-    font-weight: 500;
+    font-size: .6rem;
+    font-weight: 600;
 
-    z-index: 999999 !important;
+    z-index: 9;
 
-    margin: 0 10px 6px 0 !important;
+    margin: 0;
 
-    color: #bdbdbd;
+    text-decoration: none; 
+
+    color: #0080ff;
 }
-
-#addchat-bot .c-guestbox.c-active + .c-footer .c-footer-text
+@media only screen and (max-width: 37.5em)
 {
-    color: #fff;
+    #addchat-footer
+    {
+        display: none;
+    }
 }
 
 #addchat-bot-admin .ca-card
@@ -10944,8 +10997,8 @@ readers do not read off random characters that represent icons */
 
     position: fixed;
     z-index: 9999;
-    right: 2%;
-    bottom: 3%;
+    right: 1%;
+    bottom: 2%;
 
     overflow: hidden;
 

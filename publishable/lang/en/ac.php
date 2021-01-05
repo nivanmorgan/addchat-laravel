@@ -11,6 +11,9 @@ return [
     "ru"                                => 'русский',
     "zh-CN"                             => '中国',
     /* xxxXXXxxx NO NEED TO TRANSLATE THESE xxxXXXxxx */    
+    
+    "lang_name"                         => 'en',
+
 
     /* Labels & Actions */
     'id'                        => 'Id',
@@ -139,7 +142,9 @@ return [
     'widget_config'             => 'Widget Config',
     'realtime'                  => 'Realtime',
     'notification'              => 'Notification',
-    'logout_login'              => 'Logout & Login again to see effects',
-
-
+    'logout_login'              => 'Logout And Login Again',  
+    'hide_email'                => 'Hide Email',
+    'yes_no'                    => 'Yes / No',
+    "enter_send"                =>  'Enter To Send',
+    "open_chat_on_notification" => 'OpenChat On Notification'
 ];

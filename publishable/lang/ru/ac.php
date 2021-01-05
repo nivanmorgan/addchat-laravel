@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "lang_name"                 => 'ru',
     'id'                        => "Идентификатор",
     'fail'                      => "Fail",
     'delete'                    => "Удалить",
@@ -117,5 +118,7 @@ return [
     'widget_config'             => "Виджет Конфиг",
     'realtime'                  => "В реальном времени",
     'notification'              => "Уведомление",
-    'logout_login'              => 'Logout & Login again to see effects',
+    'logout_login'              => 'выйти и снова войти',  
+    'hide_email'                => 'скрыть электронную почту',
+    'yes_no'                    => 'Да или нет'
 ];

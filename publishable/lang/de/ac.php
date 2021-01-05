@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "lang_name"                         => 'de',
+
     'id'                        => "Id",
     'fail'                      => "Mislukken",
     'delete'                    => "Verwijderen",
@@ -117,5 +119,7 @@ return [
     'widget_config'             => "Widget Config",
     'realtime'                  => "Realtime",
     'notification'              => "Melding",
-    'logout_login'              => 'Logout & Login again to see effects',
+    'logout_login'              => 'Log uit en log opnieuw in',  
+    'hide_email'                => 'Verberg e-mail',
+    'yes_no'                    => 'Ja / Nee'
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "lang_name"                 => 'ja',
     'id'                        => "Id",
     'fail'                      => "失敗",
     'delete'                    => "削除",
@@ -117,5 +118,7 @@ return [
     'widget_config'             => "ウィジェット構成",
     'realtime'                  => "リアルタイム",
     'notification'              => "通知",
-    'logout_login'              => 'Logout & Login again to see effects',
+    'logout_login'              => 'ログアウトして再度ログインする',  
+    'hide_email'                => 'メールを隠す',
+    'yes_no'                    => 'はい、もしくは、いいえ'
 ];

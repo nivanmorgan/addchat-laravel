@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "lang_name"                 => 'hi',
     'id'                        => "आईडी",
     'fail'                      => "विफल",
     'delete'                    => "हटाएं",
@@ -117,5 +118,7 @@ return [
     'widget_config'             => "विजेट कॉन्फ़िगरेशन",
     'realtime'                  => "रियलटाइम",
     'notification'              => "अधिसूचना",
-    'logout_login'              => 'Logout & Login again to see effects',
+    'logout_login'              => 'लॉगआउट करें और फिर से लॉगिन करें',  
+    'hide_email'                => 'ई - मेल छिपाएं',
+    'yes_no'                    => 'हाॅं / नही'
 ];

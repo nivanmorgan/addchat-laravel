@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "lang_name"                 => 'it',
     'id'                        => "Id",
     'fail'                      => "Fallito",
     'delete'                    => "Elimina",
@@ -117,5 +118,7 @@ return [
     'widget_config'             => "Config Widget",
     'realtime'                  => "Tempo reale",
     'notification'              => "Notifica",
-    'logout_login'              => 'Logout & Login again to see effects',
+    'logout_login'              => 'Disconnettersi e accedere nuovamente',  
+    'hide_email'                => 'Nascondi email',
+    'yes_no'                    => 'Si / No'
 ];

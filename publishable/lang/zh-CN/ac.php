@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "lang_name"                 => 'zh-CN',
     'id'                        => "Id",
     'fail'                      => "失败",
     'delete'                    => "删除",
@@ -117,5 +118,7 @@ return [
     'widget_config'             => "小部件配置",
     'realtime'                  => "实时",
     'notification'              => "通知",
-    'logout_login'              => 'Logout & Login again to see effects',
+    'logout_login'              => '注销并再次登录',  
+    'hide_email'                => '隐藏电子邮件',
+    'yes_no'                    => '是还是不是'
 ];

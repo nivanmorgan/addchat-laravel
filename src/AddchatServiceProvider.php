@@ -18,19 +18,16 @@ class AddchatServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // register Addchat facade
         $loader = AliasLoader::getInstance();
         $loader->alias('Addchat', AddchatFacade::class);
+
         $this->app->singleton('addchat', function () {
             return new Addchat();
         });
 
-        // boot up config file
         $this->registerConfigs();
 
-        // initialise console commands 
-        if ($this->app->runningInConsole()) 
-        {
+        if ($this->app->runningInConsole()) {
             $this->registerPublishableResources();
             $this->registerConsoleCommands();
         }
@@ -57,27 +54,29 @@ class AddchatServiceProvider extends ServiceProvider
      */
     private function registerPublishableResources()
     {
-        $publishablePath    = dirname(__DIR__).'/publishable';
-        $publishable        = [
-            'config' => [
-                "{$publishablePath}/config/addchat.php" => config_path('addchat.php')
+        $publishablePath = dirname(__DIR__).'/publishable';
+
+        $publishable = [
+            'addchat_config' => [
+                "{$publishablePath}/config/addchat.php" => config_path('addchat.php'),
             ],
-            'resources' => [
+            'addchat_resources' => [
                 "{$publishablePath}/lang" => resource_path('lang/vendor/addchat')
             ],
-            'public' => [
-                "{$publishablePath}/assets"     => public_path('assets'),
+
+            /* Publish AddChat assets to public folder */
+            'addchat_public' => [
+                "{$publishablePath}/assets"     => public_path(),
             ],
         ];
 
         foreach ($publishable as $group => $paths) 
+        {
             $this->publishes($paths, $group);
+        }
     }
 
-    /**
-     * Setup Addchat configs
-      */
-    private function registerConfigs()
+    public function registerConfigs()
     {
         $this->mergeConfigFrom(
             dirname(__DIR__).'/publishable/config/addchat.php', 'addchat'

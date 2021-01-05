@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateAcMessagesTable extends Migration {
+class CreateAcGuestsMessagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,16 +13,14 @@ class CreateAcMessagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('ac_messages', function(Blueprint $table)
+		Schema::create('ac_guests_messages', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->integer('m_from')->default(0);
 			$table->integer('m_to')->nullable()->default(0);
-			$table->text('message', 65535);
-			$table->boolean('is_read')->default(0);
-			$table->boolean('m_from_delete')->default(0);
-			$table->boolean('m_to_delete')->default(0);
-			$table->dateTime('dt_updated')->nullable();
+			$table->integer('m_from')->nullable()->default(0);
+			$table->integer('g_to')->nullable()->default(0);
+			$table->integer('g_from')->nullable()->default(0);
+			$table->integer('messages_count')->default(1);
 		});
 	}
 
@@ -34,7 +32,7 @@ class CreateAcMessagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('ac_messages');
+		Schema::drop('ac_guests_messages');
 	}
 
 }
